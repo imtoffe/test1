@@ -8,12 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $displaygenderS = isset($_POST['genderS']) ? trim($_POST['genderS']) : '';
     $displaybreedS = isset($_POST['breedS']) ? trim($_POST['breedS']) : '';
     $displayageS = isset($_POST['ageS']) ? trim($_POST['ageS']) : '';
-    $displayescriptionS = isset($_POST['descriptionS']) ? trim($_POST['descriptionS']) : '';
+    $displaydescriptionS = isset($_POST['descriptionS']) ? trim($_POST['descriptionS']) : '';
     $displayreasonS = isset($_POST['reasonS']) ? trim($_POST['reasonS']) : '';
     $displayverificationS = isset($_POST['verificationS']) ? trim($_POST['verificationS']) : '';
 
     // Basic input validation
-    if (empty(display$dogName) || empty($displaygenderS) || empty($displaybreedS) || empty($displayageS) || empty($displaydescriptionS) || empty($displayreasonS) || empty($displayverificationS)) {
+    if (empty($displaydogName) || empty($displaygenderS) || empty($displaybreedS) || empty($displayageS) || empty($displaydescriptionS) || empty($displayreasonS) || empty($displayverificationS)) {
         echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
         exit;
     }
