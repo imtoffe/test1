@@ -1,4 +1,3 @@
-
 function addProd(event) {
     event.preventDefault();
 
@@ -8,9 +7,8 @@ function addProd(event) {
     var ageS = document.getElementById('ageS').value;
     var descriptionS = document.getElementById('descriptionS').value;
     var reasonS = document.getElementById('reasonS').value;
-    var photoS = document.getElementById('photoS').value;
-    var pdfS = document.getElementById('pdfS').value;
-    var verificationS = document.getElementById('verificationS').value;
+    var photoS = document.getElementById('photoS').files;
+
 
     var formData = new FormData();
     formData.append('dogName', dogName);
@@ -20,8 +18,6 @@ function addProd(event) {
     formData.append('descriptionS', descriptionS);
     formData.append('reasonS', reasonS);
     formData.append('photoS', photoS);
-    formData.append('pdfS', pdfS);
-    formData.append('verificationS', verificationS);
     var xhr = new XMLHttpRequest();
 
     xhr.open('POST', '2add.php', true);
@@ -74,9 +70,7 @@ function editProd(event) {
     var ageS = document.getElementById('editageS').value;
     var descriptionS = document.getElementById('editdescriptionS').value;
     var reasonS = document.getElementById('editreasonS').value;
-    var photoS = document.getElementById('editphotoS').value;
-    var pdfS = document.getElementById('editpdfS').value;
-    var verificationS = document.getElementById('editverificationS').value;
+
 
     var formData = new FormData();
     formData.append('dogId', dogId);
@@ -86,9 +80,6 @@ function editProd(event) {
     formData.append('ageS', ageS);
     formData.append('descriptionS', descriptionS);
     formData.append('reasonS', reasonS);
-    formData.append('photoS', photoS);
-    formData.append('pdfS', pdfS);
-    formData.append('verificationS', verificationS);
 
     var xhr = new XMLHttpRequest();
 
@@ -124,8 +115,6 @@ function fetchAndDisplayData() {
                     <td>${dog.age}</td>
                     <td>${dog.description}</td>
                     <td>${dog.reason}</td>
-                    <td>${dog.photo}</td>
-                    <td>${dog.pdf}</td>
                     <td>${dog.verification}</td>
 
                 </tr>

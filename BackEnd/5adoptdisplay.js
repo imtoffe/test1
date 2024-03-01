@@ -1,3 +1,8 @@
+function addDataAndSave(event) {
+    event.preventDefault();
+    addSelectedDogs();
+}
+
 function fetchAndDisplayData() {
     fetch('dog_table.json')
         .then(response => {
@@ -13,13 +18,14 @@ function fetchAndDisplayData() {
             data.forEach(dog => {
                 const row = `
                     <tr>
-                        <td><input type="checkbox" class="selectCheckbox"></td>
+                        <td><button type="button" onclick="updateDog(${dog.dog_id})">Verify Application</button></td>
+                        <td>${dog.dog_id}</td>
                         <td>${dog.dog_name}</td>
                         <td>${dog.gender}</td>
                         <td>${dog.breed}</td>
                         <td>${dog.age}</td>
-                        <td>${dog.description}</td>
                         <td>${dog.reason}</td>
+                        <td>${dog.description}</td>
                         <td>${dog.verification}</td>
                     </tr>
                 `;
@@ -51,8 +57,6 @@ function fetchAndDisplaySavedData() {
                     <p>Breed: ${savedDog.breed}</p>
                     <p>Age: ${savedDog.age}</p>
                     <p>Description: ${savedDog.description}</p>
-                    <p>Reason: ${savedDog.reason}</p>
-                    <p>Verification: ${savedDog.verification}</p>
                 `;
 
                 savedDataContainer.appendChild(card);
@@ -61,23 +65,22 @@ function fetchAndDisplaySavedData() {
         .catch(error => console.error('Error fetching saved data:', error));
 }
 
-
-function addSelectedDogs() {
-    const checkboxes = document.querySelectorAll('.selectCheckbox:checked');
-
-    checkboxes.forEach(checkbox => {
-        const selectedDogRow = checkbox.closest('tr');
-        const dogDetails = {
-            dogName: selectedDogRow.cells[2].textContent,
-            genderS: selectedDogRow.cells[3].textContent,
-            breedS: selectedDogRow.cells[4].textContent,
-            ageS: selectedDogRow.cells[5].textContent,
-            descriptionS: selectedDogRow.cells[6].textContent,
-            reasonS: selectedDogRow.cells[7].textContent,
-            verificationS: selectedDogRow.cells[8].textContent,
-        };
-
-        addDataAndSave();  // Replace with your appropriate function if needed
+function updateDog(dogID){
+    fetch('updateDog.php', {
+        method: 'POST',
+        body: JSON.stringify({ dogID: dogID }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        alert("Verification Changed!");
+        location.reload();
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
 }
 
@@ -87,11 +90,11 @@ function displayDogCard(dogDetails) {
 
     card.innerHTML = `
         <h3>${dogDetails.dog_name}</h3>
+
         <p>Gender: ${dogDetails.gender}</p>
         <p>Breed: ${dogDetails.breed}</p>
         <p>Age: ${dogDetails.age}</p>
         <p>Description: ${dogDetails.description}</p>
-        <p>Reason: ${dogDetails.reason}</p>
         <p>Verification: ${dogDetails.verification}</p>
     `;
 

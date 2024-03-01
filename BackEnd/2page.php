@@ -31,14 +31,8 @@
         <label for="reasonS">Reason for rehoming:</label>
         <input type="text" id="reasonS" name="reasonS" required>
 
-        <label for="photoS">Attach Dog Photo:</label>
-        <input type="text" id="photoS" name="photoS" required>
-
-        <label for="pdfS">Attach PDF:</label>
-        <input type="text" id="pdfS" name="pdfS" required>
-
-        <label for="verificationS">Verifications:</label>
-        <input type="text" id="verificationS" name="verificationS" required>
+        <label for="photoS">Photo:</label>
+        <input type="file" name="photoS" id="photoS" accept="image/*">
 
         <input type="submit" value="Add Dog Application">
     </form>
@@ -67,14 +61,6 @@
         <label for="editreasonS">Reason for rehoming:</label>
         <input type="text" id="editreasonS" name="editreasonS" required>
 
-        <label for="editphotoS">Attach Dog Photo:</label>
-        <input type="text" id="editphotoS" name="editphotoS" required>
-
-        <label for="editpdfS">Attach PDF:</label>
-        <input type="text" id="editpdfS" name="editpdfS" required>
-
-        <label for="editverificationS">Verifications:</label>
-        <input type="text" id="editverificationS" name="editverificationS" required>
 
             <input type="submit" value="Edit Dog Applicable">
         </form>
@@ -98,8 +84,6 @@
                     <th>Age</th>
                     <th>Description</th>
                     <th>Dog Reason</th>
-                    <th>Photos</th>
-                    <th>PDF</th>
                     <th>Verification</th>
                 </tr>
             </thead>
