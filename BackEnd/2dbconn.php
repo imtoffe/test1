@@ -2,7 +2,7 @@
 
 $dbHost = "localhost"; //Host
 $dbUser = "root"; //User
-$dbPassword = "@20030309jjd";//Password
+$dbPassword = "@winwin11";//Password
 $dbName = "projectopaw"; //Database
 
 $conn = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);

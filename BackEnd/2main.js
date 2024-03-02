@@ -1,23 +1,8 @@
 function addProd(event) {
     event.preventDefault();
 
-    var dogName = document.getElementById('dogName').value;
-    var genderS = document.getElementById('genderS').value;
-    var breedS = document.getElementById('breedS').value;
-    var ageS = document.getElementById('ageS').value;
-    var descriptionS = document.getElementById('descriptionS').value;
-    var reasonS = document.getElementById('reasonS').value;
-    var photoS = document.getElementById('photoS').files;
 
-
-    var formData = new FormData();
-    formData.append('dogName', dogName);
-    formData.append('genderS', genderS);
-    formData.append('breedS', breedS);
-    formData.append('ageS', ageS);
-    formData.append('descriptionS', descriptionS);
-    formData.append('reasonS', reasonS);
-    formData.append('photoS', photoS);
+    var formData = new FormData(document.getElementById("addForm"));
     var xhr = new XMLHttpRequest();
 
     xhr.open('POST', '2add.php', true);

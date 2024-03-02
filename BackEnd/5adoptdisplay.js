@@ -53,10 +53,13 @@ function fetchAndDisplaySavedData() {
 
                 card.innerHTML = `
                     <h3>${savedDog.dog_name}</h3>
-                    <p>Gender: ${savedDog.gender}</p>
-                    <p>Breed: ${savedDog.breed}</p>
-                    <p>Age: ${savedDog.age}</p>
-                    <p>Description: ${savedDog.description}</p>
+                    <img src="${savedDog.photo}" class="dog-photo"></img>
+                    <p><b>Gender</b>: ${savedDog.gender}</p>
+                    <p><b>Breed</b>: ${savedDog.breed}</p>
+                    <p><b>Age</b>: ${savedDog.age}</p>
+                    <p><b>Description</b>: ${savedDog.description}</p>
+                    <button class="favorite-button" onClick="favorite(${savedDog.dog_id}")>Favorite</button>
+                    <button class="adopt-button" onClick="adopt(${savedDog.dog_id}")>Adopt</button>
                 `;
 
                 savedDataContainer.appendChild(card);

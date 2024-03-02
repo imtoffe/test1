@@ -1,1 +1,67 @@
-[]
+[
+    {
+        "dog_id": 5,
+        "user_id": null,
+        "dog_name": "ew",
+        "gender": "ew",
+        "breed": "ew",
+        "age": "ew",
+        "description": "ew",
+        "reason": "ew",
+        "photo": "ew",
+        "pdf": "ew",
+        "verification": "verified"
+    },
+    {
+        "dog_id": 6,
+        "user_id": null,
+        "dog_name": "jgjgj",
+        "gender": "dsfdsf",
+        "breed": "dsfsf",
+        "age": "dsfdsf",
+        "description": "dsfdsf",
+        "reason": "dsfsf",
+        "photo": "sdfdsf",
+        "pdf": "fdsf",
+        "verification": "verified"
+    },
+    {
+        "dog_id": 7,
+        "user_id": null,
+        "dog_name": "ew",
+        "gender": "ew",
+        "breed": "ew",
+        "age": "ew",
+        "description": "ew",
+        "reason": "ew",
+        "photo": "ew",
+        "pdf": "ew",
+        "verification": "verified"
+    },
+    {
+        "dog_id": 14,
+        "user_id": null,
+        "dog_name": "Winmark",
+        "gender": "Male",
+        "breed": "Chihuahua",
+        "age": "Puppy",
+        "description": "Red jacket boy",
+        "reason": "Taga QC",
+        "photo": "Uploads/chihuahua.jpg",
+        "pdf": null,
+        "verification": "verified"
+    },
+    {
+        "dog_id": 15,
+        "user_id": null,
+        "dog_name": "Toffe",
+        "gender": "Male",
+        "breed": "Golden Retriever",
+        "age": "Puppy",
+        "description": "Davao Boy",
+        "reason": "Di natutulog",
+        "photo": "Uploads/65e296ed9a407-1709348589.jpg",
+        "pdf": null,
+        "verification": "verified"
+    }
+]

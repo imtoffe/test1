@@ -8,8 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ageS = $_POST['ageS'];
     $descriptionS = $_POST['descriptionS'];
     $reasonS = $_POST['reasonS'];
-    
-    // Handle file upload
     $photoS = uploadImage('photoS');
 
     $sql = "INSERT INTO dog_table (dog_name, gender, breed, age, description, reason, photo)
